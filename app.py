@@ -14,7 +14,8 @@ def generate_response(input_text):
 
     llm = OpenAI(model='gpt-4.1-nano',temperature=0.7, openai_api_key = openai_api_key)
     output_text = llm.invoke(input_text)
-    st.info(output_text.content) #Display output in web app
+    # output_text = output_result
+    st.info(output_text) #Display output in web app
 
 with st.form('my_form'):
     #Build web app framework
