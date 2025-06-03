@@ -1,4 +1,4 @@
-from langchain_comunity.llms import openai #Import OpenAI for llm framework
+from langchain_community.llms import openai #Import openai api
 import streamlit as st #Import streamlit for web app framework
 
 st.title('Basic Chatbot') #App title
