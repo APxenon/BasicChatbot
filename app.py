@@ -3,7 +3,7 @@ import streamlit as st #Import streamlit for web app framework
 
 st.title('Basic Chatbot') #App title
 
-openai_api_key = st.sidebar.text_input('OpenAI API Key',type='password') #Field to input OpenAI API key
+#openai_api_key = st.sidebar.text_input('OpenAI API Key',type='password') #Field to input OpenAI API key
 
 def generate_response(input_text):
     #Queries OpenAI LLM and returns the generated response
@@ -12,7 +12,8 @@ def generate_response(input_text):
     #Output:
     #   output_text     response from llm
 
-    llm = ChatOpenAI(model='gpt-4.1-nano',temperature=0.7, openai_api_key = openai_api_key)
+    #llm = ChatOpenAI(model='gpt-4.1-nano',temperature=0.7, openai_api_key = openai_api_key)
+    llm = ChatOpenAI(model='gpt-4.1-nano',temperature=0.7)
     output_text = llm.invoke(input_text)
     st.info(output_text.content) #Display output in web app
 
