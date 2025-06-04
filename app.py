@@ -21,8 +21,9 @@ with st.form('my_form'):
     #Build web app framework
     text = st.text_area('Enter Prompt:','') #User prompt field
     submitted = st.form_submit_button('Submit') #User submit entered prompt
+    generate_response(text)
     #Check validity of api key and generate resposne if valid
-    if not openai_api_key.startswith('sk-'):
-        st.warning('Please enter your OpenAI API key')
-    if submitted and openai_api_key.startswith('sk-'):
-        generate_response(text)
+    #if not openai_api_key.startswith('sk-'):
+    #    st.warning('Please enter your OpenAI API key')
+    #if submitted and openai_api_key.startswith('sk-'):
+    #    generate_response(text)
