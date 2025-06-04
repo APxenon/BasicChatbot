@@ -1,4 +1,4 @@
-from langchain_openai import OpenAI
+from langchain_openai import ChatOpenAI
 import streamlit as st #Import streamlit for web app framework
 
 st.title('Basic Chatbot') #App title
@@ -12,9 +12,9 @@ def generate_response(input_text):
     #Output:
     #   output_text     response from llm
 
-    llm = OpenAI(model='gpt-4.1-nano',temperature=0.7, openai_api_key = openai_api_key)
+    llm = ChatOpenAI(model='gpt-4.1-nano',temperature=0.7, openai_api_key = openai_api_key)
     output_text = llm.invoke(input_text)
-    st.info(output_text) #Display output in web app
+    st.info(output_text.content) #Display output in web app
 
 with st.form('my_form'):
     #Build web app framework
